@@ -213,15 +213,19 @@ $endif$
     \textsf{\textbf{$author.name$}$if(author.degree)$, $author.degree$$endif$}\\[0,1cm]
     \textsf{born $author.birthday$ in $author.birthplace$}\\[0,1cm]
     \textsf{Matr.-Nr.: $author.matr$}\\[1,5cm]
+
+    \vspace{2cm}
+
+    \textsf{$date$}
 \end{large}
+
+\vspace{3cm}
 
 \begin{large}
     \textbf{Supervisors:}\\[0,3cm]
     $for(supervisors)$
     \textsf{$supervisors$}\\[0,3cm]
     $endfor$
-    \vspace{1cm}
-    \textsf{$date$}\\
 \end{large}
 
 \end{center}

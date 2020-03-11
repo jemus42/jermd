@@ -13,10 +13,10 @@ supervisors:
 date: "`r Sys.Date()`"
 faculty: "Faculty 9824"
 institute: "Institute name"
-# logo: "includes/university-logo.pdf"
+logo: "includes/UniBremen.pdf"
 bibliography: "references.bib"
 link-citations: true
-# erklaerung: "includes/erklaerung.pdf"
+erklaerung: "includes/erklaerung.pdf"
 deckblatt: true
 verzeichnisse:
   toc: true
