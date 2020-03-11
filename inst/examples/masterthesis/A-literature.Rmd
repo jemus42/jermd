@@ -1,0 +1,15 @@
+---
+knit: "bookdown::render_book"
+---
+
+`r if (knitr::is_html_output()) '
+# Bibliography {-}
+'`
+
+
+```{r make_pkg_bib, include=FALSE, eval=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```

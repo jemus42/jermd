@@ -1,18 +1,52 @@
 ---
-title: "Template Title"
-author: "Your Name"
-date: "The Date"
-output: output_format
+title: 'Thesis title'
+thesistype: 'Master Thesis'
+author:
+  name: 'Your Name'
+  birthday: "Date"
+  birthplace: "Birthplace"
+  #degree: 'B.Sc.'
+  matr: 3482423
+supervisors:
+  - Supervisor 1
+  - Supervisor 2
+date: "`r Sys.Date()`"
+faculty: "Faculty 9824"
+institute: "Institute name"
+# logo: "includes/university-logo.pdf"
+bibliography: "references.bib"
+site: bookdown::bookdown_site
+link-citations: true
+# erklaerung: "includes/erklaerung.pdf"
+deckblatt: false
+verzeichnisse:
+  toc: true
+  figures: true
+  tables: true
+output:
+  jermd::masterthesis:
+    latex_engine: xelatex
+    dev: cairo_pdf
+    fig_caption: yes
+    fig_height: 3.8
+    fig_width: 6.3
+    keep_tex: yes
+    number_sections: yes
+    pandoc_args: [
+      "--top-level-division=chapter"
+    ]
+    citation_package: biblatex
+knit: "bookdown::render_book"
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+<!--
+Edit these lines as appropriate.
+The actual thesis content is in several Rmd files.
 
-## Adding an RMarkdown Template
+You'll need to edit the _bookdown.yml file to set the order in which you'd like them to appear.
+-->
 
-This file is what a user will see when they select your template. Make sure that you update the fields in the yaml header. In particular you will want to update the `output` field to whatever format your template requires.
+**Notice**: This file has to be named `index.Rmd`. If you created it from the RStudio template picker thingy and gave it a filename,
+you'll have to rename it.
 
-This is a good place to demonstrate special features that your template provides. Ideally it should knit out-of-the-box, or at least contain clear instructions as to what needs changing.
-
-Finally, be sure to remove this message!
+Maybe I'll figure out how to fix this, sorry.

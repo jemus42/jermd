@@ -1,0 +1,10 @@
+---
+knit: "bookdown::render_book"
+---
+
+# Abstract {-}
+\chaptermark{Abstract} <!-- Bug in template would put wrong chaptermark here, needs proper fix -->
+
+The abstract should outline the main approach and findings of the thesis and must not be more than 500 words.
+
+\newpage

@@ -1,0 +1,20 @@
+---
+knit: "bookdown::render_book"
+---
+<!--
+The bibliography heading is only for the gitbook output, so it
+is only rendered in html outputs. You can remove this file if you
+only render to PDF anyway
+-->
+
+`r if (knitr::is_html_output()) '
+# Bibliography {-}
+'`
+
+
+```{r make_pkg_bib, include=FALSE, eval=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```

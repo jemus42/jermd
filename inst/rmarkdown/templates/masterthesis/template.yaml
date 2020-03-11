@@ -1,4 +1,4 @@
 name: masterthesis
 description: >
-   A description of the template
-create_dir: FALSE
+   Used for my master's thesis, based on my bachelor's thesis.
+create_dir: TRUE

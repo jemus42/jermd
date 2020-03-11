@@ -8,7 +8,7 @@ mathfont: "Asana Math"
 monofont: "Fira Mono"
 colorlinks: yes
 output:
-  jemisc::uebungsblatt:
+  jermd::uebungsblatt:
     keep_tex: no
 ---
 

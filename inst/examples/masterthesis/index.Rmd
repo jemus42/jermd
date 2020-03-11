@@ -1,0 +1,27 @@
+---
+title: "Thesis Title"
+thesistype: "Master Thesis"
+author:
+  name: "Your Name"
+  birthday: "Date"
+  birthplace: "Birthplace"
+  # degree: 'B.Sc.'
+  matr: 3482423
+supervisors:
+  - Supervisor 1
+  - Supervisor 2
+date: "`r Sys.Date()`"
+faculty: "Faculty 9824"
+institute: "Institute name"
+# logo: "includes/university-logo.pdf"
+bibliography: "references.bib"
+link-citations: true
+# erklaerung: "includes/erklaerung.pdf"
+deckblatt: true
+verzeichnisse:
+  toc: true
+  figures: true
+  tables: true
+site: bookdown::bookdown_site
+knit: "bookdown::render_book"
+---

@@ -1,0 +1,16 @@
+#bookdown::pdf_book:
+jermd::masterthesis:
+  latex_engine: xelatex
+#  template: masterarbeit.tex
+  dev: cairo_pdf
+  fig_caption: yes
+  fig_height: 3.8
+  fig_width: 6.3
+  keep_tex: yes
+  number_sections: yes
+  pandoc_args: [
+    "--top-level-division=chapter"
+  ]
+  citation_package: biblatex
+bookdown::gitbook:
+  split_by: "rmd"

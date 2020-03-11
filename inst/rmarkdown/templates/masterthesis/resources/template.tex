@@ -1,0 +1,280 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%Dokumentdefinition%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[oneside,12pt,a4paper,bibliography=totocnumbered,numbers=noenddot,table]{scrreprt}
+\usepackage{geometry}
+\geometry{a4paper, top=30mm, left=30mm, right=30mm, bottom=30mm, headsep=5mm, footskip=10mm}
+\setlength{\footheight}{20.77846pt}
+\setlength{\headheight}{20.77846pt}
+
+\usepackage{setspace} 				%Zeilenabstand
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Kopf- und Fußzeilendefinition%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[headsepline,footsepline]{scrlayer-scrpage}	%mit Trennlinien
+
+\pagestyle{scrheadings}			%Seitenstil umdefiniert
+\clearscrheadfoot				%Definition leermachen
+\renewcommand{\chapterpagestyle}{scrheadings}		%Kapitelseitenstil umdefiniert
+\renewcommand{\chaptermark}[1]{\markboth{\ #1}{}}	%Definition Kapitel?berschrift=\leftmark
+\ohead{\leftmark}				%äußere Kopfzeile
+%\chead{}						%mittlere Kopfzeile
+\ihead{}						%innere Kopfzeile
+\ofoot{\thepage}				%äußere Fu?zeile
+\cfoot{}						%mittlere Fu?zeile
+\ifoot{}						%innere Fu?zeile
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%deutsche Zeichenkodierung%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman,english]{babel}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%Verschiedene Schriftarten%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{kpfonts}
+%\usepackage{stix} % this was selected by default
+%\usepackage{times}
+%\usepackage{libertinust1math}
+\usepackage[T1]{fontenc}
+%\renewcommand*\familydefault{\sfdefault}
+
+\usepackage[sfdefault]{roboto}  %% Option 'sfdefault' only if the base font of the
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%Zusatzpackages%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{a4wide}
+%\usepackage[locale=DE]{siunitx}
+\usepackage{acronym}					%Abk?rzungsverzeichnis
+\usepackage[nointegrals]{wasysym}		%Symbole und Sonderzeichen
+\usepackage{romannum}					%R?mische Zahlen
+%\usepackage{floatflt,epsfig} 			%Bilder im eps-format einf?gen
+\usepackage{graphicx}
+\usepackage[hyphens]{url}				%Websites einbinden
+\usepackage{pdfpages} 					%direkt pdf Datein einbinden
+\usepackage{mathtools}					%matheumgebung f?r Formeln und Gleichungen
+\usepackage{capt-of}					%Captions f?r non-float-Objekte
+\usepackage[titletoc]{appendix}			%erm?glicht das erstellen von Anhangsverzeichnissen
+% Typography
+\usepackage{microtype}                  % Typographievoodoo
+\usepackage{csquotes}
+\usepackage[all]{nowidow}
+%\clubpenalty = 10000
+%\widowpenalty = 10000
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Extra stuff for Rmarkdown to work (code blocks)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{verbatim}{Verbatim}{xleftmargin=0em}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{xleftmargin=0em,commandchars=\\\{\}}
+
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{{#1}}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{{#1}}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\ImportTok}[1]{{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{{#1}}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{{#1}}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{{#1}}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{{#1}}}}
+\newcommand{\BuiltInTok}[1]{{#1}}
+\newcommand{\ExtensionTok}[1]{{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{{#1}}}
+\newcommand{\RegionMarkerTok}[1]{{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\NormalTok}[1]{{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% kableExtra stuff
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+
+%\usepackage{natbib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%Stil des Literaturverzeichnisses%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[
+    backend=biber,
+    natbib=true,
+    style=apa,
+    sorting=nyt,
+    sortlocale=de_DE,
+    url=false,
+    doi=true,
+]{biblatex}
+\addbibresource{$bibliography$}
+
+\DeclareLanguageMapping{ngerman}{ngerman-apa}
+\DeclareLanguageMapping{english}{english-apa}
+\AtBeginDocument{\selectlanguage{ngerman}\selectlanguage{english}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% Special Stuff %%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[colorlinks,    				%PDF linked Verzeichnis
+pdfpagelabels,
+pdfstartview = FitH,
+bookmarksopen = true,
+bookmarksnumbered = true,
+linkcolor = black,
+plainpages = false,
+hypertexnames = false,
+citecolor = black,
+breaklinks = true,
+allcolors = black] {hyperref}
+
+%\renewcommand{\labelitemi}{-}   %aufzählungszeichen strich statt punkt - beliebig anpassbar
+
+\sloppy % "schlampiger" Blocksatz
+
+% Absatzeinzug und Abstand
+% \setlength{\parindent}{0.5cm}
+\setlength{\parindent}{0cm}
+% \setlength{\parskip}{0.1cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% hier startet das eigentliche Dokument
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\pagenumbering{Roman}				% Seitennummerierung auf römisch geändert
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Deckblatt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+$if(deckblatt)$
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{center}
+
+%\begin{LARGE}
+\textsf{\textbf{$faculty$}}\\
+%\end{LARGE}
+
+$if(logo)$
+\begin{figure}[h!]
+    \centering
+    \includegraphics[height=2cm]{$logo$}
+\end{figure}
+$endif$
+
+\textsf{\textbf{$institute$}}\\[1,0cm]
+
+\begin{Large}
+    \textsf{\textbf{$thesistype$}}\\[0,75cm]
+\end{Large}
+
+\begin{LARGE}
+    \textsf{\textbf{$title$}}\\[1,5cm]
+\end{LARGE}
+
+\begin{large}
+    \textsf{by}\\[0,1cm]
+    \textsf{\textbf{$author.name$}$if(author.degree)$, $author.degree$$endif$}\\[0,1cm]
+    \textsf{born $author.birthday$ in $author.birthplace$}\\[0,1cm]
+    \textsf{Matr.-Nr.: $author.matr$}\\[1,5cm]
+\end{large}
+
+\begin{large}
+    \textbf{Supervisors:}\\[0,3cm]
+    $for(supervisors)$
+    \textsf{$supervisors$}\\[0,3cm]
+    $endfor$
+    \vspace{1cm}
+    \textsf{$date$}\\
+\end{large}
+
+\end{center}
+
+\end{titlepage}
+\thispagestyle{empty}
+\cleardoublepage
+
+\newpage
+$endif$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%% Verzeichnisse %%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{secnumdepth}{2} 	%countertiefe für Verzeichnisse
+\setcounter{page}{1}
+
+$if(verzeichnisse.toc)$
+\chaptermark{Table of Contents}
+\tableofcontents
+\newpage
+$endif$
+
+$if(verzeichnisse.figures)$
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+\chaptermark{List of Figures}
+%\newpage
+$endif$
+
+$if(verzeichnisse.tables)$
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables}
+\chaptermark{List of Tables}
+%\newpage
+$endif$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%% Main text %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Not needed <here>, but has to be included in Rmd before main content
+% \setcounter{page}{1}
+
+% Hopefully working linespread comparable to word
+\linespread{1.25}
+\setstretch{1.433}
+% \linespread{1.3}
+\setlength{\parskip}{0.25cm}
+
+$body$
+
+\printbibliography[heading=bibintoc,title={Bibliography}]
+
+$if(erklaerung)$\includepdf[pages=1]{$erklaerung$}$endif$
+
+\end{document}
