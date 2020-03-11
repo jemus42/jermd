@@ -1,0 +1,4 @@
+name: Bericht (PDF/XeLaTeX)
+description: >
+  Template für Bericht (i.e. Praktikumsberichte)
+create_dir: false

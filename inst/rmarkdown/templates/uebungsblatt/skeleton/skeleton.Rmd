@@ -1,0 +1,17 @@
+---
+title: "Übungsblatt XX"
+subject: "FACH"
+author: "Your Name"
+date: "Stand: `r format(Sys.time(), '%F %H:%M Uhr')`"
+fontsize: 10pt
+mathfont: "Asana Math"
+monofont: "Fira Mono"
+colorlinks: yes
+output:
+  jemisc::uebungsblatt:
+    keep_tex: no
+---
+
+```{r setup, include=FALSE}
+# source("setup.R")
+```

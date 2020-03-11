@@ -1,0 +1,45 @@
+---
+lang: de-DE
+papersize: a4
+title: "A thing that happened" # Leave blank to render a manually set title page
+author: "Your Name"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: scrreprt
+classoption:
+  - bibliography=totoc
+# bibliography: [references.bib]
+# biblio-style: apalike
+biblio-style: authoryear
+link-citations: yes
+linestretch: 1.25
+mainfont: "Roboto Slab"
+sansfont: "Roboto"
+monofont: "Fira Mono"
+mathfont: "Asana Math"
+links-as-notes: false
+output:
+  jermd::bericht:
+    dev: cairo_pdf
+    latex_engine: xelatex
+    citation_package: biblatex
+    keep_tex: yes
+    number_sections: yes
+    toc: yes
+    toc_depth: 3
+    toc_bib: yes
+    # includes:
+    #   in_header: includes/preamble.tex
+    #   before_body: includes/titlepage.tex
+    #   after_body: includes/postamble.tex
+---
+
+# Bericht
+
+It should be noted that this template is pretty broken on many levels and was created as a bunch of weird LaTeX hacks to make at least *some* kind of submittable report under time constraints. 
+
+Don't use it.  
+Unless it's for inspiration on how to do it (significantly) better.
+
+
+It is only included in this package as documentation for myself.
