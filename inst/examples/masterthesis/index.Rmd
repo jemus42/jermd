@@ -20,8 +20,8 @@ erklaerung: "includes/erklaerung.pdf"
 deckblatt: true
 verzeichnisse:
   toc: true
-  figures: true
-  tables: true
+  figures: false
+  tables: false
 site: bookdown::bookdown_site
 knit: "bookdown::render_book"
 ---

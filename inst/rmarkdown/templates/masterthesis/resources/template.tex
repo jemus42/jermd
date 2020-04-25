@@ -1,9 +1,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%Dokumentdefinition%%%%%%%
+%%%%%%% Dokumentdefinition %%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[oneside,12pt,a4paper,bibliography=totocnumbered,numbers=noenddot,table]{scrreprt} % scrreprt
+\documentclass[oneside,12pt,a4paper,bibliography=totoc,numbers=noenddot,table]{scrreprt} % scrreprt
 \usepackage{geometry}
-\geometry{a4paper, top=30mm, left=30mm, right=30mm, bottom=30mm, headsep=5mm, footskip=10mm}
+\geometry{a4paper,top=30mm, left=30mm, right=30mm, bottom=30mm, headsep=5mm, footskip=10mm}
 \setlength{\footheight}{20.77846pt}
 \setlength{\headheight}{20.77846pt}
 
@@ -28,7 +28,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%deutsche Zeichenkodierung%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[utf8]{inputenc}
+%\usepackage[utf8]{inputenc}
 \usepackage[english,ngerman]{babel}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%Verschiedene Schriftarten%%%%%%%%%
@@ -138,7 +138,7 @@ $endif$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% kableExtra stuff
-%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
@@ -157,7 +157,7 @@ $endif$
 %\usepackage{natbib}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%Stil des Literaturverzeichnisses%%%%
+%%% Stil des Literaturverzeichnisses %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage[
@@ -318,10 +318,24 @@ $endif$
 
 $body$
 
-\addcontentsline{toc}{chapter}{Bibliography}
-\chaptermark{Bibliography}
+%\addcontentsline{toc}{chapter}{Bibliography}
+%\chaptermark{Bibliography}
 \singlespacing
-\printbibliography[heading=bibintoc,title={Bibliography}]
+
+%%%%%%%%%%%%%%%%%%
+%% Bibliography %%
+%%%%%%%%%%%%%%%%%%
+
+% Okay so usually this should print the bibligraphy and add it to the TOC according
+% to both stackoverflow people and the actual biblatex documentation (re: KOMA classes)
+% \printbibliography[heading=bibintoc]
+% But because I don't understand *something* and this doesn't actually work,
+% I'll work around this like so:
+
+% Manually print bib heading *only*
+\printbibheading
+% Then print the bibliography without heading
+\printbibliography[heading=none]
 
 $if(erklaerung)$\includepdf[pages=1]{$erklaerung$}$endif$
 
