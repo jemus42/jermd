@@ -1,13 +1,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%Dokumentdefinition%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[oneside,12pt,a4paper,bibliography=totocnumbered,numbers=noenddot,table]{scrreprt}
+\documentclass[oneside,12pt,a4paper,bibliography=totocnumbered,numbers=noenddot,table]{scrreprt} % scrreprt
 \usepackage{geometry}
 \geometry{a4paper, top=30mm, left=30mm, right=30mm, bottom=30mm, headsep=5mm, footskip=10mm}
 \setlength{\footheight}{20.77846pt}
 \setlength{\headheight}{20.77846pt}
 
-\usepackage{setspace} 				%Zeilenabstand
+\usepackage{setspace} % Zeilenabstand
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Kopf- und Fußzeilendefinition%
@@ -18,18 +18,18 @@
 \clearscrheadfoot				%Definition leermachen
 \renewcommand{\chapterpagestyle}{scrheadings}		%Kapitelseitenstil umdefiniert
 \renewcommand{\chaptermark}[1]{\markboth{\ #1}{}}	%Definition Kapitel?berschrift=\leftmark
-\ohead{\leftmark}				%äußere Kopfzeile
-%\chead{}						%mittlere Kopfzeile
-\ihead{}						%innere Kopfzeile
-\ofoot{\thepage}				%äußere Fu?zeile
-\cfoot{}						%mittlere Fu?zeile
-\ifoot{}						%innere Fu?zeile
+\ohead{\upshape\leftmark} % äußere Kopfzeile
+%\chead{} % mittlere Kopfzeile
+\ihead{}  % innere Kopfzeile
+%\ofoot{\thepage} % äußere Fu?zeile
+\cfoot{\thepage} % mittlere Fu?zeile
+\ifoot{} % innere Fußzeile
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%deutsche Zeichenkodierung%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[utf8]{inputenc}
-\usepackage[ngerman,english]{babel}
+\usepackage[english,ngerman]{babel}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%Verschiedene Schriftarten%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -37,10 +37,20 @@
 %\usepackage{stix} % this was selected by default
 %\usepackage{times}
 %\usepackage{libertinust1math}
-\usepackage[T1]{fontenc}
+%\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,unicode-math}
+
 %\renewcommand*\familydefault{\sfdefault}
 
-\usepackage[sfdefault]{roboto}  %% Option 'sfdefault' only if the base font of the
+%\usepackage[sfdefault]{roboto}  %% Option 'sfdefault' only if the base font of the
+
+  \setmainfont{Source Serif Pro}
+
+  \setsansfont{Source Sans Pro}
+
+  \setmonofont[Mapping=tex-ansi,Scale=0.75]{Source Code Pro}
+
+  %\setmathfont{Latin Modern Math}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%Zusatzpackages%%%%%%%%%%%%%%%%%
@@ -138,11 +148,17 @@
     backend=biber,
     natbib=true,
     style=apa,
+    %bibstyle=authoryear, citestyle=apa,
+    %style=authoryear,
     sorting=nyt,
-    sortlocale=de_DE,
+    %sortlocale=de_DE,
+    sortlocale=en_US,
     url=false,
     doi=true,
 ]{biblatex}
+
+\setlength\bibitemsep{1.5\itemsep}
+
 \addbibresource{references.bib}
 
 \DeclareLanguageMapping{ngerman}{ngerman-apa}
@@ -166,7 +182,7 @@ allcolors = black] {hyperref}
 
 %\renewcommand{\labelitemi}{-}   %aufzählungszeichen strich statt punkt - beliebig anpassbar
 
-\sloppy % "schlampiger" Blocksatz
+% \sloppy % "schlampiger" Blocksatz
 
 % Absatzeinzug und Abstand
 % \setlength{\parindent}{0.5cm}
@@ -205,23 +221,25 @@ allcolors = black] {hyperref}
     \textsf{\textbf{Thesis Title}}\\[1,5cm]
 \end{LARGE}
 
+\vspace{1.5em}
+
 \begin{large}
     \textsf{by}\\[0,1cm]
     \textsf{\textbf{Your Name}}\\[0,1cm]
     \textsf{born Date in Birthplace}\\[0,1cm]
     \textsf{Matr.-Nr.: 3482423}\\[1,5cm]
 
-    \vspace{2cm}
+    \vspace{0.5em}
 
-    \textsf{2020-03-11}
+    \textsf{2020-04-25}
 \end{large}
 
-\vspace{3cm}
+\vspace{1.5em}
 
 \begin{large}
-    \textbf{Supervisors:}\\[0,3cm]
-        \textsf{Supervisor 1}\\[0,3cm]
-        \textsf{Supervisor 2}\\[0,3cm]
+    \textsf{\textbf{Supervisors:}}\\[0,3cm]
+        \textsf{Supervisor 1}\\[0.5em]
+        \textsf{Supervisor 2}\\[0.5em]
     \end{large}
 
 \end{center}
@@ -259,10 +277,13 @@ allcolors = black] {hyperref}
 % \setcounter{page}{1}
 
 % Hopefully working linespread comparable to word
-\linespread{1.25}
-\setstretch{1.433}
+%\linespread{1.25}
+%\setstretch{1.433}
 % \linespread{1.3}
+\onehalfspacing
 \setlength{\parskip}{0.25cm}
+
+%\onehalfspacing
 
 \hypertarget{abstract}{%
 \chapter*{Abstract}\label{abstract}}
@@ -312,8 +333,37 @@ A plot
 \begin{Highlighting}[]
 \KeywordTok{library}\NormalTok{(ggplot2)}
 \KeywordTok{library}\NormalTok{(hrbrthemes)}
-\KeywordTok{library}\NormalTok{(firasans)}
+\end{Highlighting}
+\end{Shaded}
 
+\begin{verbatim}
+## NOTE: Either Arial Narrow or Roboto Condensed fonts are required to use these themes.
+\end{verbatim}
+
+\begin{verbatim}
+##       Please use hrbrthemes::import_roboto_condensed() to install Roboto Condensed and
+\end{verbatim}
+
+\begin{verbatim}
+##       if Arial Narrow is not on your system, please see https://bit.ly/arialnarrow
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(firasans)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## NOTE: Either Arial Narrow or Roboto Condensed fonts are *required* to use these themes.
+\end{verbatim}
+
+\begin{verbatim}
+##       Please use hrbrthemes::import_fira_sans() to install them.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \KeywordTok{ggplot}\NormalTok{(iris, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ Sepal.Length, }\DataTypeTok{y =}\NormalTok{ Sepal.Width, }\DataTypeTok{fill =}\NormalTok{ Species)) }\OperatorTok{+}
 \StringTok{  }\KeywordTok{geom\_point}\NormalTok{(}\DataTypeTok{shape =} \DecValTok{21}\NormalTok{, }\DataTypeTok{size =} \DecValTok{2}\NormalTok{) }\OperatorTok{+}
 \StringTok{  }\KeywordTok{theme\_ipsum\_fsc}\NormalTok{()}
@@ -374,6 +424,9 @@ You might put some computer output here, or maybe additional tables.
 
 Note that line 5 must appear before your first appendix. But other appendices can just start like any other chapter.
 
+\addcontentsline{toc}{chapter}{Bibliography}
+\chaptermark{Bibliography}
+\singlespacing
 \printbibliography[heading=bibintoc,title={Bibliography}]
 
 \includepdf[pages=1]{includes/erklaerung.pdf}

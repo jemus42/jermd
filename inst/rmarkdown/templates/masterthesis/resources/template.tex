@@ -12,18 +12,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Kopf- und Fußzeilendefinition%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[headsepline,footsepline]{scrlayer-scrpage}	%mit Trennlinien
+\usepackage[headsepline,footsepline]{scrlayer-scrpage} % mit Trennlinien
 
-\pagestyle{scrheadings}			%Seitenstil umdefiniert
-\clearscrheadfoot				%Definition leermachen
+\pagestyle{scrheadings} % Seitenstil umdefiniert
+\clearscrheadfoot % Definition leermachen
 \renewcommand{\chapterpagestyle}{scrheadings}		%Kapitelseitenstil umdefiniert
 \renewcommand{\chaptermark}[1]{\markboth{\ #1}{}}	%Definition Kapitel?berschrift=\leftmark
-\ohead{\leftmark}				%äußere Kopfzeile
-%\chead{}						%mittlere Kopfzeile
-\ihead{}						%innere Kopfzeile
-\ofoot{\thepage}				%äußere Fu?zeile
-\cfoot{}						%mittlere Fu?zeile
-\ifoot{}						%innere Fu?zeile
+\ohead{\upshape\leftmark} % äußere Kopfzeile
+%\chead{} % mittlere Kopfzeile
+\ihead{}  % innere Kopfzeile
+%\ofoot{\thepage} % äußere Fu?zeile
+\cfoot{\thepage} % mittlere Fu?zeile
+\ifoot{} % innere Fußzeile
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%deutsche Zeichenkodierung%%%%%%%
@@ -37,10 +37,36 @@
 %\usepackage{stix} % this was selected by default
 %\usepackage{times}
 %\usepackage{libertinust1math}
-\usepackage[T1]{fontenc}
+%\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,unicode-math}
+
 %\renewcommand*\familydefault{\sfdefault}
 
-\usepackage[sfdefault]{roboto}  %% Option 'sfdefault' only if the base font of the
+%\usepackage[sfdefault]{roboto}  %% Option 'sfdefault' only if the base font of the
+
+$if(mainfont)$
+  \setmainfont[$for(mainfontoptions)$$mainfontoptions$$sep$,$endfor$]{$mainfont$}
+$else$
+  \setmainfont{Source Serif Pro}
+$endif$
+
+$if(sansfont)$
+  \setsansfont[$for(sansfontoptions)$$sansfontoptions$$sep$,$endfor$]{$sansfont$}
+$else$
+  \setsansfont{Source Sans Pro}
+$endif$
+
+$if(monofont)$
+  \setmonofont[Mapping=tex-ansi$if(monofontoptions)$,$for(monofontoptions)$$monofontoptions$$sep$,$endfor$$endif$]{$monofont$}
+$else$
+  \setmonofont[Mapping=tex-ansi,Scale=0.75]{Source Code Pro}
+$endif$
+
+$if(mathfont)$
+  \setmathfont[$for(mathfontoptions)$$mathfontoptions$$sep$,$endfor$]{$mathfont$}
+$else$
+  %\setmathfont{Latin Modern Math}
+$endif$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%Zusatzpackages%%%%%%%%%%%%%%%%%
@@ -147,6 +173,8 @@
     doi=true,
 ]{biblatex}
 
+\setlength\bibitemsep{1.5\itemsep}
+
 $for(bibliography)$
 \addbibresource{$bibliography$}
 $endfor$
@@ -214,23 +242,25 @@ $endif$
     \textsf{\textbf{$title$}}\\[1,5cm]
 \end{LARGE}
 
+\vspace{1.5em}
+
 \begin{large}
     \textsf{by}\\[0,1cm]
     \textsf{\textbf{$author.name$}$if(author.degree)$, $author.degree$$endif$}\\[0,1cm]
     \textsf{born $author.birthday$ in $author.birthplace$}\\[0,1cm]
     \textsf{Matr.-Nr.: $author.matr$}\\[1,5cm]
 
-    \vspace{2cm}
+    \vspace{0.5em}
 
     \textsf{$date$}
 \end{large}
 
-\vspace{3cm}
+\vspace{1.5em}
 
 \begin{large}
-    \textbf{Supervisors:}\\[0,3cm]
+    \textsf{\textbf{Supervisors:}}\\[0,3cm]
     $for(supervisors)$
-    \textsf{$supervisors$}\\[0,3cm]
+    \textsf{$supervisors$}\\[0.5em]
     $endfor$
 \end{large}
 
@@ -276,18 +306,19 @@ $endif$
 % \setcounter{page}{1}
 
 % Hopefully working linespread comparable to word
-\linespread{1.25}
-\setstretch{1.433}
+%\linespread{1.25}
+%\setstretch{1.433}
 % \linespread{1.3}
+\onehalfspacing
 \setlength{\parskip}{0.25cm}
 
 %\onehalfspacing
 
 $body$
 
-% bib: shoddy way of reduzing the spacing in (and between) items
-\linespread{1}
-\setstretch{1}
+\addcontentsline{toc}{chapter}{Bibliography}
+\chaptermark{Bibliography}
+\singlespacing
 \printbibliography[heading=bibintoc,title={Bibliography}]
 
 $if(erklaerung)$\includepdf[pages=1]{$erklaerung$}$endif$

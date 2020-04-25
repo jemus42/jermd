@@ -1,13 +1,16 @@
 Package: jermd
-Title: Jemsu RMarkown Packages
-Version: 0.0.2
+Title: Jemsu RMarkown Templates
+Version: 0.0.5
 Authors@R: 
     person(given = "Lukas",
            family = "Burk",
            role = c("aut", "cre"),
            email = "lukas@tadaa-data.de",
            comment = c(ORCID = "0000-0001-7528-3795"))
-Description: Some personal RMarkdown templates.
+Description: Some personal RMarkdown templates. These are not fit for general use,
+  as most of them are shoddily hacked together. This package is only wherever you found
+  it for convenience and/or reference. Oh glob please don't tell me how I'm doing LaTeX
+  wrong I'm so sorry.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -15,4 +18,4 @@ Roxygen: list(markdown = TRUE)
 Imports: 
     rmarkdown,
     bookdown
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.0
