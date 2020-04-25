@@ -41,11 +41,12 @@ A plot
 ```{r a-plot, echo = TRUE}
 library(ggplot2)
 library(hrbrthemes)
-library(firasans)
 
 ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, fill = Species)) +
   geom_point(shape = 21, size = 2) +
-  theme_ipsum_fsc()
+  theme_ipsum(
+    base_family = "Source Sans Pro"
+  )
 ```
 
 A table

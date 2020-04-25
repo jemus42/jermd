@@ -12,17 +12,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Kopf- und Fußzeilendefinition%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[headsepline,footsepline]{scrlayer-scrpage}	%mit Trennlinien
+\usepackage[headsepline,footsepline]{scrlayer-scrpage} % mit Trennlinien
 
-\pagestyle{scrheadings}			%Seitenstil umdefiniert
-\clearscrheadfoot				%Definition leermachen
+\pagestyle{scrheadings} % Seitenstil umdefiniert
+\clearscrheadfoot % Definition leermachen
 \renewcommand{\chapterpagestyle}{scrheadings}		%Kapitelseitenstil umdefiniert
 \renewcommand{\chaptermark}[1]{\markboth{\ #1}{}}	%Definition Kapitel?berschrift=\leftmark
-\ohead{\upshape\leftmark} % äußere Kopfzeile
+\ohead{\sffamily\upshape\leftmark} % äußere Kopfzeile
 %\chead{} % mittlere Kopfzeile
 \ihead{}  % innere Kopfzeile
-%\ofoot{\thepage} % äußere Fu?zeile
-\cfoot{\thepage} % mittlere Fu?zeile
+\ofoot{\sffamily\upshape\thepage} % äußere Fu?zeile
+%\cfoot{\upshape\thepage} % mittlere Fu?zeile
 \ifoot{} % innere Fußzeile
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -221,20 +221,22 @@ allcolors = black] {hyperref}
     \textsf{\textbf{Thesis Title}}\\[1,5cm]
 \end{LARGE}
 
-\vspace{1.5em}
+%\vspace{1.5em}
+
+\vfill
 
 \begin{large}
     \textsf{by}\\[0,1cm]
     \textsf{\textbf{Your Name}}\\[0,1cm]
     \textsf{born Date in Birthplace}\\[0,1cm]
-    \textsf{Matr.-Nr.: 3482423}\\[1,5cm]
+    \textsf{Matr.-Nr.: 3482423}\\
 
     \vspace{0.5em}
 
     \textsf{2020-04-25}
 \end{large}
 
-\vspace{1.5em}
+\vfill
 
 \begin{large}
     \textsf{\textbf{Supervisors:}}\\[0,3cm]
@@ -350,23 +352,11 @@ A plot
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{library}\NormalTok{(firasans)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## NOTE: Either Arial Narrow or Roboto Condensed fonts are *required* to use these themes.
-\end{verbatim}
-
-\begin{verbatim}
-##       Please use hrbrthemes::import_fira_sans() to install them.
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
 \KeywordTok{ggplot}\NormalTok{(iris, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ Sepal.Length, }\DataTypeTok{y =}\NormalTok{ Sepal.Width, }\DataTypeTok{fill =}\NormalTok{ Species)) }\OperatorTok{+}
 \StringTok{  }\KeywordTok{geom\_point}\NormalTok{(}\DataTypeTok{shape =} \DecValTok{21}\NormalTok{, }\DataTypeTok{size =} \DecValTok{2}\NormalTok{) }\OperatorTok{+}
-\StringTok{  }\KeywordTok{theme\_ipsum\_fsc}\NormalTok{()}
+\StringTok{  }\KeywordTok{theme\_ipsum}\NormalTok{(}
+    \DataTypeTok{base\_family =} \StringTok{"Source Sans Pro"}
+\NormalTok{  )}
 \end{Highlighting}
 \end{Shaded}
 
