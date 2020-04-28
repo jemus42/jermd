@@ -221,9 +221,11 @@ $if(deckblatt)$
 \thispagestyle{empty}
 \begin{center}
 
-%\begin{LARGE}
+\begin{large}
 \textsf{\textbf{$faculty$}}\\
-%\end{LARGE}
+\end{large}
+
+\vfill
 
 $if(logo)$
 \begin{figure}[h!]
@@ -232,35 +234,40 @@ $if(logo)$
 \end{figure}
 $endif$
 
-\textsf{\textbf{$institute$}}\\[1,0cm]
-
-\begin{Large}
-    \textsf{\textbf{$thesistype$}}\\[0,75cm]
-\end{Large}
-
-\begin{LARGE}
-    \textsf{\textbf{$title$}}\\[1,5cm]
-\end{LARGE}
-
-%\vspace{1.5em}
-
 \vfill
 
 \begin{large}
-    \textsf{by}\\[0,1cm]
-    \textsf{\textbf{$author.name$}$if(author.degree)$, $author.degree$$endif$}\\[0,1cm]
-    \textsf{born $author.birthday$ in $author.birthplace$}\\[0,1cm]
-    \textsf{Matr.-Nr.: $author.matr$}\\
-
-    \vspace{0.5em}
-
-    \textsf{$date$}
+\textsf{\textbf{$institute$}}\\
 \end{large}
 
 \vfill
 
+\begin{Large}
+    \textsf{\textbf{$thesistype$}}\\
+\end{Large}
+
+\vfill
+
+\begin{LARGE}
+    \textsf{\textbf{$title$}}\\ %[1,5cm]
+\end{LARGE}
+
+\vfill
+
 \begin{large}
-    \textsf{\textbf{Supervisors:}}\\[0,3cm]
+    \textsf{by}\\[0.5em]
+    \textsf{\textbf{$author.name$}$if(author.degree)$, $author.degree$$endif$}\\[0.5em]
+    \textsf{born $author.birthday$ in $author.birthplace$}\\[0.5em]
+    \textsf{Matr.-Nr.: $author.matr$}\\
+
+    %\vspace{1em}
+    \vfill
+
+    \textsf{$date$}
+
+    \vfill
+
+    \textsf{\textbf{Supervisors:}}\\[1em]
     $for(supervisors)$
     \textsf{$supervisors$}\\[0.5em]
     $endfor$
