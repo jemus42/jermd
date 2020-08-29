@@ -18,4 +18,4 @@ Roxygen: list(markdown = TRUE)
 Imports: 
     rmarkdown,
     bookdown
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1

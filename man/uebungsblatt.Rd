@@ -58,7 +58,9 @@ can disable the \code{df_print} behavior entirely by setting the option
 document (typically created using the \code{\link[rmarkdown]{includes}} function).}
 
 \item{citation_package}{The LaTeX package to process citations, \code{natbib}
-or \code{biblatex}. Use \code{none} if neither package is to be used.}
+or \code{biblatex}. Use \code{default} if neither package is to be used,
+which means citations will be processed via the command
+\command{pandoc-citeproc}.}
 
 \item{pandoc_args}{Additional command line options to pass to pandoc}
 }
