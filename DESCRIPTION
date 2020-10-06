@@ -1,6 +1,6 @@
 Package: jermd
 Title: Jemsu RMarkown Templates
-Version: 0.0.8
+Version: 0.0.9
 Authors@R: 
     person(given = "Lukas",
            family = "Burk",
