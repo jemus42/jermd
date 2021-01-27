@@ -328,5 +328,5 @@ $body$
 % Then print the bibliography without heading
 \printbibliography[heading=none]
 
-\includepdf[pages=1]{$erklaerung$}
+$if(erklaerung)$\includepdf[pages=1]{$erklaerung$}$endif$
 \end{document}
