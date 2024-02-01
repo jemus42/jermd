@@ -5,7 +5,7 @@ Authors@R:
     person(given = "Lukas",
            family = "Burk",
            role = c("aut", "cre"),
-           email = "lukas@tadaa-data.de",
+           email = "github@tadaa-data.de",
            comment = c(ORCID = "0000-0001-7528-3795"))
 Description: Some personal RMarkdown templates. These are not fit for general use,
   as most of them are shoddily hacked together. This package is only wherever you found
