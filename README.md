@@ -1,5 +1,7 @@
 # jermd
 
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
 **Je**msu **Rmd** templates – A minimal(ish) R package for RMarkdown templates.
 
 They used to be included in my general-miscellaneous `{jemisc}` package, but I extracted them here to have them isolated in one package with minimal dependencies (namely `{rmarkdown}` and `{bookdown}`).
